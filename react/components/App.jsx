@@ -8,6 +8,7 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
+      filter: "",
       stocks: [],
     }
   }
@@ -17,12 +18,25 @@ class App extends Component {
       this.setState({stocks: data});
     });
   }
+
+  handleFilter = (event) => {
+    this.setState({filter: event.target.value});
+  };
+
   render(){
+    const {filter, stocks} = this.state;
+
     return (
-      <div className="app">{this.state.stocks.map((stock, idx) => <Card key={idx} {...stock}/>)}</div>
+      <div>
+        <input type="text" onChange={this.handleFilter}/>
+        <div className="app">
+          {stocks
+            .filter(stock => stock.symbol.toLowerCase().indexOf(filter.toLowerCase()) >= 0 || stock.name.toLowerCase().indexOf(filter.toLowerCase()) >= 0)
+            .map((stock, idx) => <Card key={idx} {...stock}/>)}
+        </div>
+      </div>
     );
   }
 }
 
 export default App;
-
