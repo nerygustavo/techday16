@@ -1,0 +1,40 @@
+.app{
+  width: 90%;
+  margin: 20px auto;
+  display: flex;
+}
+.card {
+  margin: 0px 15px;
+  padding: 10px 5px;
+  border: 1px black solid;
+  border-radius: 20px;
+  width: 500px;
+  flex-shrink: 0;
+}
+
+.header {
+  display: flex;
+}
+
+.header .symbol{
+  flex: 1;
+}
+
+.header .price{
+  flex: 2;
+}
+
+.body {
+  display: flex;
+}
+
+.body .details{
+  flex: 1;
+}
+.body .image{
+  flex: 2;
+}
+
+.image > img {
+  width: 100px;
+}
