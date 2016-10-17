@@ -1,40 +1,102 @@
+.main{
+  position: relative;
+  min-height: 1080px;
+}
+
+.main::after {
+  content: "";
+  background: url("../images/background.jpg");
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+
+.filter{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding: 10px;
+}
+
+.filter input{
+  width: 500px;
+  border-radius: 20px;
+  font-size: 24px;
+  height: 30px;
+  padding: 0 20px;
+}
+
 .app{
   width: 90%;
   margin: 20px auto;
   display: flex;
+  flex-wrap: wrap;
 }
+
 .card {
-  margin: 0px 15px;
-  padding: 10px 5px;
+  margin: 15px;
+  padding: 10px 40px;
   border: 1px black solid;
   border-radius: 20px;
-  width: 500px;
+  width: 300px;
+  background-color: white;
   flex-shrink: 0;
 }
 
-.header {
+.card .header {
   display: flex;
+  margin: 10px 0px;
+  font-size: 30px;
 }
 
-.header .symbol{
+.card .header .symbol{
   flex: 1;
 }
 
-.header .price{
+.card .header .price{
   flex: 2;
+  display: flex;
+  justify-content: flex-end;
 }
 
-.body {
+.card .body {
   display: flex;
 }
 
-.body .details{
+.card .body .details{
   flex: 1;
+  margin: 0px;
+  padding: 0px;
 }
-.body .image{
+
+.card .body .details li{
+  display: flex;
+}
+
+.card .body .details li .name{
   flex: 2;
 }
 
-.image > img {
+.card .body .details li .value{
+  flex: 1;
+  text-align: right;
+}
+
+.card .body .image{
+  display: flex;
+  flex: 1;
+}
+
+.card .body .image > img {
   width: 100px;
+  height: 100px;
+  margin-left: auto;
+}
+
+.card .footer{
+  margin: 10px 0px;
 }

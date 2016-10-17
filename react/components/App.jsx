@@ -27,8 +27,10 @@ class App extends Component {
     const {filter, stocks} = this.state;
 
     return (
-      <div>
-        <input type="text" onChange={this.handleFilter}/>
+      <div className="main">
+        <div className="filter">
+          <input type="text" onChange={this.handleFilter}/>
+        </div>  
         <div className="app">
           {stocks
             .filter(stock => stock.symbol.toLowerCase().indexOf(filter.toLowerCase()) >= 0 || stock.name.toLowerCase().indexOf(filter.toLowerCase()) >= 0)

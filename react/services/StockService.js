@@ -5,7 +5,7 @@ export const getStockData = (stock) => fetch(`https://query.yahooapis.com/v1/pub
   symbol: stock.symbol,
   price: stock.Bid,
   change: stock.Change,
-  changeinPercent: stock.ChangeInPercent,
+  changeinPercent: stock.ChangeinPercent,
   volume: stock.Volume,
   dayHigh: stock.DaysHigh,
   dayLow: stock.DaysLow,

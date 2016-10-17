@@ -25,17 +25,26 @@ class App extends Component {
       .filter(stock => filterStock(stock, filterText))
       .map((stock, idx) => <Card key={idx} {...stock}/>)
 
-    const content = (isLoading)
-    ? <div>Loading.....</div>
-    : <div>
-        <input type="text" onChange={this.handleFilter}/>
-        <div className="app">
-          {filteredStocks}
-        </div>
-      </div>;
+    const content = (
+      <div className="main">
+        {
+          (isLoading) ? 
+          <div className="loading">Loading.....</div> :
+          <div>
+            <div className="main">
+              <div className="filter">
+                <input type="text" onChange={this.handleFilter}/>
+              </div>  
+              <div className="app">
+                {filteredStocks}
+              </div>
+            </div>
+          </div>
+        }
+      </div>);
 
     return (content);
-  }
+  };
 }
 
 const mapStateToProps = (state) => ({
