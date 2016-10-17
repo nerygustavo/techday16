@@ -1,6 +1,6 @@
 import React, { Component, addons } from 'react';
 
-import Card from './Card/Card';
+import Card from './Card';
 
 import {getStockData} from '../services/StockService';
 
