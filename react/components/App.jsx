@@ -13,7 +13,7 @@ class App extends Component {
     }
   }
   componentDidMount(){
-    getStockData(['"TSLA"', '"FB"', '"IBM"', '"GOOG"', '"MSFT"', '"AMZN"', '"TWTR"','"YHOO"','"LNKD"','"ORCL"','"EBAY"'])
+    getStockData(['"IBM"', '"TSLA"', '"FB"', '"GOOG"', '"MSFT"', '"AMZN"', '"TWTR"','"YHOO"','"LNKD"','"ORCL"','"EBAY"'])
     .then(data => {
       this.setState({stocks: data});
     });
